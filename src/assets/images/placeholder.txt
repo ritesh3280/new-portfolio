@@ -1,0 +1,4 @@
+This directory will contain your profile image and background image.
+You'll need to replace these with your actual images:
+1. profile.jpg - A professional headshot or portrait
+2. background.jpg - A background image for the hero section
