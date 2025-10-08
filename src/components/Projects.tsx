@@ -44,7 +44,7 @@ const Projects = ({
       image: focusFlowImg,
       tags: ["LSTM", "EEG", "Neural Networks", "Real-time Analytics", "Python"],
       githubUrl: "https://github.com/ritesh3280",
-      demoUrl: "https://devpost.com/software/see-with-me"
+      demoUrl: "https://devpost.com/software/focus-flow-y63tzm"
     },
     {
       title: "SolSpeak (HackNYU – 2nd Place, Best Solana Hack)",
@@ -84,7 +84,7 @@ const Projects = ({
       image: hireFlowImg,
       tags: ["NLP", "AI", "Terraform", "Recruitment"],
       githubUrl: "https://github.com/ritesh3280",
-      demoUrl: "https://devpost.com/software/to-be-decided-og94ij"
+      demoUrl: "https://devpost.com/software/hireflow"
     }
   ]
 }: ProjectsProps) => {

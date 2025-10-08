@@ -17,6 +17,7 @@ function App() {
   const personalInfo = {
     name: "Ritesh Thipparthi",
     tagline: "Software Development Engineer",
+    subtitle: "CS + Business @ UMD • 7x Hackathon Winner",
     // Using the actual images from the images folder
     profileImage: profileImage,
     backgroundImage: backgroundImage
@@ -28,6 +29,7 @@ function App() {
       <Hero 
         name={personalInfo.name}
         tagline={personalInfo.tagline}
+        subtitle={personalInfo.subtitle}
         profileImage={personalInfo.profileImage}
         backgroundImage={personalInfo.backgroundImage}
       />

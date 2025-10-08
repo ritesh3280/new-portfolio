@@ -3,11 +3,12 @@ import type { CSSProperties } from 'react';
 interface HeroProps {
   name: string;
   tagline: string;
+  subtitle?: string;
   profileImage: string;
   backgroundImage: string;
 }
 
-const Hero = ({ name, tagline, profileImage, backgroundImage }: HeroProps) => {
+const Hero = ({ name, tagline, subtitle, profileImage, backgroundImage }: HeroProps) => {
   // Style for background image with fade effect
   const backgroundStyle: CSSProperties = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
@@ -34,7 +35,11 @@ const Hero = ({ name, tagline, profileImage, backgroundImage }: HeroProps) => {
           {/* Text content - centered below image */}
           <div className="text-center mb-8">
             <h1 className="text-3xl md:text-5xl font-bold text-white mb-3">{name}</h1>
-            <p className="text-lg md:text-xl text-gray-200 mb-8">{tagline}</p>
+            <p className="text-lg md:text-xl text-gray-200 mb-2">{tagline}</p>
+            {subtitle && (
+              <p className="text-base md:text-lg text-gray-300 mb-8">{subtitle}</p>
+            )}
+            {!subtitle && <div className="mb-8"></div>}
             
             {/* Buttons - centered */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

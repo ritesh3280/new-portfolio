@@ -17,7 +17,7 @@ const Experience = ({
       company: "Terrapin Works, University of Maryland",
       period: "May 2023 - Present",
       description: "• Built Pinpoint, an API-first platform for equipment access, training, and lab administration, enabling real time tracking for 25+ campus makerspaces and 3,000+ users across UMD\n• Implemented responsive web and backend systems powering equipment tracking, Canvas Badge integration, and real-time analytics for makerspaces across UMD\n• Integrated RESTful APIs with UMD CAS authentication for makerspace hardware, streamlining user certification and access workflows in an agile team",
-      skills: ["TypeScript", "React", "Node.js", "SQL", "REST APIs"]
+      skills: ["Python", "React", "Node.js", "SQL", "REST APIs"]
     },
     {
       title: "Undergraduate Researcher",

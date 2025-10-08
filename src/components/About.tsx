@@ -32,7 +32,7 @@ const About = ({
             <div className="pl-6">
               <h3 className="text-lg font-light text-indigo-800 mb-8 tracking-wider uppercase">Skills</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-y-5 gap-x-3">
-                {['Python', 'JavaScript', 'TypeScript', 'React', 'Node.js', 'Java', 'C/C++', 'SQL', 'AWS', 'Git', 'REST APIs', 'AI/ML'].map((skill, index) => (
+                {['Python', 'Java', 'Next.js', 'React', 'FastAPI', 'Flask', 'C', 'OCaml', 'PyTorch', 'LangChain', 'SQL', 'REST APIs'].map((skill, index) => (
                   <div key={index} className="group">
                     <span className="font-light text-gray-700 border-b border-transparent group-hover:border-indigo-400 group-hover:text-indigo-700 transition-all duration-300 pb-1">{skill}</span>
                   </div>

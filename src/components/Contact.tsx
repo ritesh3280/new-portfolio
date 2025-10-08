@@ -24,53 +24,11 @@ const Contact = ({
             I'm currently open to new opportunities and collaborations. Feel free to reach out through any of the channels below.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Contact Form */}
-            <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-4">Send a Message</h3>
-              <form className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                    placeholder="Your Name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                  <textarea 
-                    id="message" 
-                    rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                    placeholder="Your message here..."
-                  ></textarea>
-                </div>
-                <div>
-                  <button 
-                    type="submit" 
-                    className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </form>
-            </div>
-            
+          <div className="flex justify-center">
             {/* Contact Links */}
             <div className="flex flex-col justify-center">
-              <h3 className="text-lg font-medium text-gray-900 mb-6">Connect With Me</h3>
-              <div className="space-y-6">
+              <h3 className="text-lg font-medium text-gray-900 mb-6 text-center">Connect With Me</h3>
+              <div className="flex flex-wrap justify-center gap-6">
                 <a 
                   href={`mailto:${email}`}
                   className="flex items-center gap-4 text-gray-700 hover:text-indigo-600 transition-colors duration-300 group"
