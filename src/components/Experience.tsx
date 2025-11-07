@@ -29,54 +29,70 @@ const Experience = ({
   ]
 }: ExperienceProps) => {
   return (
-    <section id="experience" className="py-20 bg-gradient-to-b from-white to-indigo-50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-light text-indigo-900 tracking-wider uppercase">Work Experience</h2>
-          <div className="w-16 h-px bg-indigo-400 mt-3"></div>
+    <section id="experience" className="py-20 relative overflow-hidden">
+      {/* Multi-layered gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-tl from-pink-50/30 via-transparent to-orange-50/30"></div>
+      
+      {/* Animated gradient orbs */}
+      <div className="absolute top-20 -left-20 w-96 h-96 bg-gradient-to-br from-orange-200/20 to-amber-200/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 -right-20 w-96 h-96 bg-gradient-to-tl from-yellow-200/20 to-pink-200/20 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-orange-100/10 via-transparent to-amber-100/10 rounded-full blur-3xl"></div>
+      
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-light text-gray-800 tracking-wider uppercase">Experience</h2>
+          <p className="text-gray-600 mt-2 font-light">My professional and academic journey</p>
         </div>
         
-        <div className="space-y-12">
+        <div className="space-y-6">
           {experiences.map((exp, index) => (
-            <div key={index} className="relative">
-              {/* Timeline dot and line */}
-              {index !== experiences.length - 1 && (
-                <div className="absolute left-0 top-0 bottom-0 w-px bg-indigo-200 ml-3"></div>
-              )}
-              <div className="flex">
-                <div className="flex-shrink-0 mr-4">
-                  <div className="w-6 h-6 rounded-full bg-gradient-to-r from-indigo-500 to-blue-500 border-4 border-white shadow-sm z-10 relative"></div>
+            <div key={index} className="relative backdrop-blur-3xl bg-gradient-to-br from-white/15 via-white/8 to-white/12 rounded-2xl p-8 border border-white/30 shadow-[0_8px_32px_0_rgba(251,146,60,0.15)] hover:shadow-[0_12px_40px_0_rgba(251,146,60,0.25)] transition-all duration-300 group">
+              {/* Inner glow effect - subtle orange shimmer */}
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-200/8 via-transparent to-amber-200/8 rounded-2xl pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-tl from-white/10 via-transparent to-white/5 rounded-2xl pointer-events-none"></div>
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-300/40 to-transparent"></div>
+              
+              <div className="relative">
+                {/* Header with period badge */}
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                  <div className="flex-grow">
+                    <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-1">{exp.title}</h3>
+                    <p className="text-orange-600 font-medium text-base">{exp.company}</p>
+                  </div>
+                  <div className="mt-2 md:mt-0">
+                    <span className="inline-block px-4 py-1.5 backdrop-blur-xl bg-gradient-to-r from-orange-100/50 to-amber-100/50 text-orange-700 text-sm font-medium rounded-full border border-orange-200/50 uppercase tracking-wide">
+                      {exp.period}
+                    </span>
+                  </div>
                 </div>
                 
-                <div className="flex-grow pb-8">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                    <h3 className="text-xl font-medium text-gray-900">{exp.title}</h3>
-                    <span className="text-sm text-indigo-600 font-medium">{exp.period}</span>
-                  </div>
-                  
-                  <div className="mb-4">
-                    <span className="text-gray-700">{exp.company}</span>
-                  </div>
-                  
-                  <div className="text-gray-600 mb-4 font-light leading-relaxed">
-                    {exp.description.split('\n').map((bullet, i) => (
-                      <p key={i} className="mb-2">{bullet}</p>
+                <div className="mb-4">
+                  <span className="text-gray-600 text-sm font-light uppercase tracking-wider">
+                    {/* Location placeholder - can add if needed */}
+                  </span>
+                </div>
+                
+                {/* Description */}
+                <div className="text-gray-700 text-sm md:text-base mb-6 font-light leading-relaxed space-y-2">
+                  {exp.description.split('\n').map((bullet, i) => (
+                    <p key={i} className="pl-0">{bullet}</p>
+                  ))}
+                </div>
+                
+                {/* Skills tags */}
+                {exp.skills && (
+                  <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-200/30">
+                    {exp.skills.map((skill, skillIndex) => (
+                      <span 
+                        key={skillIndex}
+                        className="px-3 py-1.5 backdrop-blur-xl bg-gradient-to-r from-white/30 to-white/20 text-gray-700 text-xs font-medium rounded-lg border border-gray-300/30 hover:border-orange-300/50 hover:from-orange-50/40 hover:to-amber-50/40 hover:text-orange-700 transition-all duration-200"
+                      >
+                        {skill}
+                      </span>
                     ))}
                   </div>
-                  
-                  {exp.skills && (
-                    <div className="flex flex-wrap gap-2">
-                      {exp.skills.map((skill, skillIndex) => (
-                        <span 
-                          key={skillIndex}
-                          className="px-3 py-1 bg-white bg-opacity-70 text-indigo-700 text-xs font-medium rounded-full border border-indigo-100 hover:border-indigo-300 transition-colors duration-200"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                )}
               </div>
             </div>
           ))}

@@ -6,7 +6,6 @@ import About from './components/About'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
-import Footer from './components/Footer'
 
 // Import actual profile and background images
 import profileImage from './assets/images/profile.JPG'
@@ -49,7 +48,6 @@ I'm currently looking for software engineering internships where I can build thi
         linkedin="https://www.linkedin.com/in/rthipparthi/"
         devpost="https://devpost.com/ritesh3280"
       />
-      <Footer name={personalInfo.name} />
     </div>
   )
 }

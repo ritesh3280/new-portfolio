@@ -9,3 +9,30 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+/* Custom glassmorphism animations */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-10px) rotate(5deg); 
+  }
+}
+
+@keyframes sway {
+  0%, 100% { 
+    transform: translateX(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateX(3px) rotate(2deg); 
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-sway {
+  animation: sway 4s ease-in-out infinite;
+}
