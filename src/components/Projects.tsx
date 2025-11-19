@@ -6,12 +6,11 @@ import taxDaddyImg from "../assets/images/TaxDaddy.png";
 import orbitalFinanceImg from "../assets/images/orbitalfionance.png";
 import vectorMentorImg from "../assets/images/vectormentor.png";
 import hireFlowImg from "../assets/images/hireflow.png";
-import projectBg from "../assets/hPhotos/projectbg.png";
 
 interface ProjectItem {
   title: string;
   description: string;
-  image: any; // Changed from string to any to accept imported images
+  image: any;
   tags: string[];
   githubUrl: string;
   demoUrl: string;
@@ -90,67 +89,56 @@ const Projects = ({
   ]
 }: ProjectsProps) => {
   return (
-    <section id="projects" className="py-20 relative overflow-hidden">
-      {/* White background */}
-      <div className="absolute inset-0 bg-white"></div>
-      
-      {/* Project background pattern */}
-      <div 
-        className="absolute inset-0 bg-repeat opacity-100"
-        style={{
-          backgroundImage: `url(${projectBg})`,
-          backgroundSize: '120%',
-        }}
-      ></div>
-      
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-light text-gray-800 tracking-wider uppercase">Projects</h2>
-          <p className="text-gray-600 mt-2 font-light">Hackathon wins and innovative solutions</p>
-        </div>                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h2 className="text-3xl md:text-4xl font-light text-gray-900 tracking-tight">
+            Projects
+          </h2>
+          <div className="w-16 h-0.5 bg-red-500 mt-4 mx-auto"></div>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {projects.map((project, index) => (
             <div 
               key={index} 
-              className="relative backdrop-blur-3xl bg-gradient-to-br from-white/15 via-white/8 to-white/12 rounded-2xl overflow-hidden border border-white/30 shadow-[0_8px_32px_0_rgba(251,146,60,0.15)] hover:shadow-[0_12px_40px_0_rgba(251,146,60,0.25)] transition-all duration-300 group hover:-translate-y-1 flex flex-col h-full"
+              className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-red-500 transition-all duration-300 hover:shadow-md hover:-translate-y-1 flex flex-col h-full"
             >
-              {/* Inner glow effect - subtle orange shimmer */}
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-200/8 via-transparent to-amber-200/8 rounded-2xl pointer-events-none"></div>
-              <div className="absolute inset-0 bg-gradient-to-tl from-white/10 via-transparent to-white/5 rounded-2xl pointer-events-none"></div>
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-300/40 to-transparent"></div>
-              {/* Inner glow effect - purple/indigo shimmer */}
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-200/8 via-transparent to-purple-200/8 rounded-2xl pointer-events-none"></div>
-              <div className="absolute inset-0 bg-gradient-to-tl from-white/10 via-transparent to-white/5 rounded-2xl pointer-events-none"></div>
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-300/40 to-transparent"></div>
-              
-              <div className="relative h-40 overflow-hidden">
+              {/* Project Image */}
+              <div className="h-40 overflow-hidden bg-gray-100">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
-                {/* Gradient overlay on image */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
               </div>
               
-              <div className="relative p-5 flex-grow flex flex-col backdrop-blur-sm">
-                <h3 className="text-base md:text-lg font-medium text-gray-900 mb-2">{project.title}</h3>
-                <p className="text-gray-700 text-sm mb-4 flex-grow font-light leading-relaxed">{project.description}</p>
+              {/* Content */}
+              <div className="p-5 flex-grow flex flex-col">
+                <h3 className="text-base md:text-lg font-medium text-gray-900 mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-gray-700 text-sm mb-4 flex-grow leading-relaxed">
+                  {project.description}
+                </p>
                 
-                <div className="flex flex-wrap gap-1.5 mb-4 pt-3 border-t border-white/20">
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1.5 mb-4 pt-3 border-t border-gray-200">
                   {project.tags.map((tag, tagIndex) => (
                     <span 
                       key={tagIndex}
-                      className="px-2.5 py-1 backdrop-blur-xl bg-gradient-to-r from-indigo-100/40 to-purple-100/40 text-indigo-700 text-xs font-medium rounded-lg border border-indigo-200/40 hover:border-indigo-300/60 hover:from-indigo-100/60 hover:to-purple-100/60 transition-all duration-200"
+                      className="px-2.5 py-1 bg-gray-50 text-gray-700 text-xs font-medium rounded-lg border border-gray-200 hover:border-red-500 hover:bg-red-50 hover:text-red-700 transition-all duration-200"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
                 
+                {/* Action Buttons */}
                 <div className="flex gap-2">
                   <a 
                     href={project.githubUrl} 
-                    className="flex-1 px-3 py-2 backdrop-blur-xl bg-gradient-to-r from-gray-800/90 to-gray-700/90 text-white text-xs font-medium rounded-lg hover:from-gray-700/90 hover:to-gray-600/90 transition-all duration-300 flex items-center justify-center gap-1.5 border border-white/10"
+                    className="flex-1 px-3 py-2 bg-gray-900 text-white text-xs font-medium rounded-lg hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-1.5"
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
@@ -161,7 +149,7 @@ const Projects = ({
                   </a>
                   <a 
                     href={project.demoUrl} 
-                    className="flex-1 px-3 py-2 backdrop-blur-xl bg-gradient-to-r from-indigo-500/90 to-purple-500/90 text-white text-xs font-medium rounded-lg hover:from-indigo-600/90 hover:to-purple-600/90 transition-all duration-300 flex items-center justify-center gap-1.5 border border-white/20"
+                    className="flex-1 px-3 py-2 bg-red-500 text-white text-xs font-medium rounded-lg hover:bg-red-600 transition-all duration-300 flex items-center justify-center gap-1.5"
                     target="_blank" 
                     rel="noopener noreferrer"
                   >

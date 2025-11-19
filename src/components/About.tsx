@@ -4,7 +4,6 @@ import h2 from '../assets/hPhotos/h2.jpeg';
 import h3 from '../assets/hPhotos/h3.JPG';
 import h4 from '../assets/hPhotos/h4.JPG';
 import h5 from '../assets/hPhotos/h5.JPG';
-import overlay2 from '../assets/hPhotos/overlay2.png';
 
 interface AboutProps {
   title?: string;
@@ -18,183 +17,143 @@ const About = ({
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden">
-      {/* White background base */}
-      <div className="absolute inset-0 bg-white"></div>
-      
-      {/* overlay2.png with gradient on top of white background */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${overlay2})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          transform: 'rotate(180deg)',
-        }}
-      ></div>
-      
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
-        <div className="mb-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-light text-gray-800 tracking-wider uppercase drop-shadow-lg">{title}</h2>
-          <div className="w-20 h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent mt-3 mx-auto"></div>
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-light text-gray-900 tracking-tight">
+            {title}
+          </h2>
+          <div className="w-16 h-0.5 bg-red-500 mt-4 mx-auto"></div>
         </div>
         
-        {/* Two column layout - Glass card LEFT, Photos RIGHT */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
-          {/* LEFT: Glass card with description and skills - Takes 3/5 width */}
-          <div className="lg:col-span-3 relative backdrop-blur-3xl bg-gradient-to-br from-white/10 via-white/5 to-white/8 rounded-2xl p-6 md:p-8 border border-white/30 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)]">
-            {/* Inner glow effect - iridescent shimmer */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-300/10 via-pink-200/5 to-blue-300/10 rounded-2xl pointer-events-none"></div>
-            <div className="absolute inset-0 bg-gradient-to-tl from-white/15 via-transparent to-white/10 rounded-2xl pointer-events-none"></div>
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+        {/* Two column layout - Content LEFT, Photos RIGHT */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+          {/* LEFT: Content card - Takes 3/5 width */}
+          <div className="lg:col-span-3 bg-white border border-gray-200 rounded-lg p-8 hover:border-red-500 transition-colors duration-300">
+            {/* Description */}
+            <p className="text-base text-gray-700 leading-relaxed mb-8">
+              {description}
+            </p>
             
-            <div className="relative">
-              {/* Description */}
-              <p className="text-sm md:text-base text-gray-800 leading-relaxed font-light mb-6">
-                {description}
-              </p>
-              
-              {/* Subtle divider */}
-              <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-400/40 to-transparent my-5"></div>
-              
-              {/* Skills section - no individual boxes */}
-              <div>
-                <h3 className="text-base md:text-lg font-light text-gray-800 mb-4 tracking-wider uppercase">Skills</h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-3">
-                  {['Python', 'Java', 'Next.js', 'React', 'FastAPI', 'Flask', 'C', 'OCaml', 'PyTorch', 'LangChain', 'SQL', 'REST APIs'].map((skill, index) => (
-                    <div key={index} className="group">
-                      <span className="text-sm text-gray-800 font-light hover:text-gray-950 transition-colors duration-300 cursor-default">
-                        {skill}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+            {/* Divider */}
+            <div className="w-full h-px bg-gray-200 my-6"></div>
+            
+            {/* Skills section */}
+            <div>
+              <h3 className="text-lg font-medium text-gray-900 mb-4 uppercase tracking-wide">
+                Skills
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-3">
+                {['Python', 'Java', 'Next.js', 'React', 'FastAPI', 'Flask', 'C', 'OCaml', 'PyTorch', 'LangChain', 'SQL', 'REST APIs'].map((skill, index) => (
+                  <div key={index} className="group">
+                    <span className="text-sm text-gray-600 hover:text-red-500 transition-colors duration-200 cursor-default">
+                      {skill}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* RIGHT: Hackathon photos gallery - Takes 2/5 width */}
-          <div className="lg:col-span-2 space-y-3">
+          {/* RIGHT: Photo gallery - Takes 2/5 width */}
+          <div className="lg:col-span-2 space-y-4">
             {/* Top row - 2 photos */}
-            <div className="grid grid-cols-2 gap-3">
-              {/* Photo 1 - Violet/Fuchsia glass with tilt */}
-              <div className="relative group transform hover:-rotate-1 transition-transform duration-300 cursor-pointer" onClick={() => setSelectedImage(h1)}>
-                <div className="relative backdrop-blur-2xl bg-gradient-to-br from-violet-200/15 via-white/8 to-fuchsia-200/15 rounded-xl p-2 border-2 border-white/30 shadow-[0_8px_32px_0_rgba(168,85,247,0.25)]">
-                  <div className="absolute inset-0 bg-gradient-to-br from-violet-400/10 via-transparent to-fuchsia-400/10 rounded-xl pointer-events-none"></div>
-                  <div className="absolute -inset-1 bg-gradient-to-r from-violet-400/25 to-fuchsia-400/25 rounded-xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                  <div className="relative rounded-lg overflow-hidden">
-                    <img 
-                      src={h1} 
-                      alt="Hackathon 1" 
-                      className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                </div>
+            <div className="grid grid-cols-2 gap-4">
+              {/* Photo 1 */}
+              <div 
+                className="border border-gray-200 rounded-lg overflow-hidden hover:border-red-500 transition-all duration-300 cursor-pointer hover:shadow-md"
+                onClick={() => setSelectedImage(h1)}
+              >
+                <img 
+                  src={h1} 
+                  alt="Hackathon 1" 
+                  className="w-full h-32 object-cover hover:scale-105 transition-transform duration-300"
+                />
               </div>
 
-              {/* Photo 2 - Cyan/Blue glass with tilt */}
-              <div className="relative group transform hover:rotate-1 transition-transform duration-300 cursor-pointer" onClick={() => setSelectedImage(h2)}>
-                <div className="relative backdrop-blur-2xl bg-gradient-to-br from-cyan-200/15 via-white/8 to-blue-200/15 rounded-xl p-2 border-2 border-white/30 shadow-[0_8px_32px_0_rgba(59,130,246,0.25)]">
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-transparent to-blue-400/10 rounded-xl pointer-events-none"></div>
-                  <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400/25 to-blue-400/25 rounded-xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                  <div className="relative rounded-lg overflow-hidden">
-                    <img 
-                      src={h2} 
-                      alt="Hackathon 2" 
-                      className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                </div>
+              {/* Photo 2 */}
+              <div 
+                className="border border-gray-200 rounded-lg overflow-hidden hover:border-red-500 transition-all duration-300 cursor-pointer hover:shadow-md"
+                onClick={() => setSelectedImage(h2)}
+              >
+                <img 
+                  src={h2} 
+                  alt="Hackathon 2" 
+                  className="w-full h-32 object-cover hover:scale-105 transition-transform duration-300"
+                />
               </div>
             </div>
 
             {/* Middle - Large featured photo */}
-            <div className="relative group cursor-pointer" onClick={() => setSelectedImage(h3)}>
-              <div className="relative backdrop-blur-3xl bg-gradient-to-br from-pink-200/15 via-white/8 to-orange-200/15 rounded-2xl p-2.5 border-2 border-white/30 shadow-[0_8px_32px_0_rgba(236,72,153,0.25)]">
-                <div className="absolute inset-0 bg-gradient-to-br from-pink-400/10 via-transparent to-orange-400/10 rounded-2xl pointer-events-none"></div>
-                <div className="absolute -inset-1 bg-gradient-to-r from-pink-400/25 via-purple-400/25 to-orange-400/25 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white to-transparent rounded-t-2xl"></div>
-                <div className="relative rounded-xl overflow-hidden">
-                  <img 
-                    src={h3} 
-                    alt="Hackathon 3" 
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              </div>
+            <div 
+              className="border border-gray-200 rounded-lg overflow-hidden hover:border-blue-500 transition-all duration-300 cursor-pointer hover:shadow-md"
+              onClick={() => setSelectedImage(h3)}
+            >
+              <img 
+                src={h3} 
+                alt="Hackathon 3" 
+                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+              />
             </div>
 
             {/* Bottom row - 2 photos */}
-            <div className="grid grid-cols-2 gap-3">
-              {/* Photo 4 - Emerald/Teal glass */}
-              <div className="relative group transform hover:rotate-1 transition-transform duration-300 cursor-pointer" onClick={() => setSelectedImage(h4)}>
-                <div className="relative backdrop-blur-2xl bg-gradient-to-br from-emerald-200/15 via-white/8 to-teal-200/15 rounded-xl p-2 border-2 border-white/30 shadow-[0_8px_32px_0_rgba(16,185,129,0.25)]">
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/10 via-transparent to-teal-400/10 rounded-xl pointer-events-none"></div>
-                  <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400/25 to-teal-400/25 rounded-xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                  <div className="relative rounded-lg overflow-hidden">
-                    <img 
-                      src={h4} 
-                      alt="Hackathon 4" 
-                      className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                </div>
+            <div className="grid grid-cols-2 gap-4">
+              {/* Photo 4 */}
+              <div 
+                className="border border-gray-200 rounded-lg overflow-hidden hover:border-red-500 transition-all duration-300 cursor-pointer hover:shadow-md"
+                onClick={() => setSelectedImage(h4)}
+              >
+                <img 
+                  src={h4} 
+                  alt="Hackathon 4" 
+                  className="w-full h-32 object-cover hover:scale-105 transition-transform duration-300"
+                />
               </div>
 
-              {/* Photo 5 - Amber/Yellow glass */}
-              <div className="relative group transform hover:-rotate-1 transition-transform duration-300 cursor-pointer" onClick={() => setSelectedImage(h5)}>
-                <div className="relative backdrop-blur-2xl bg-gradient-to-br from-amber-200/15 via-white/8 to-yellow-200/15 rounded-xl p-2 border-2 border-white/30 shadow-[0_8px_32px_0_rgba(245,158,11,0.25)]">
-                  <div className="absolute inset-0 bg-gradient-to-br from-amber-400/10 via-transparent to-yellow-400/10 rounded-xl pointer-events-none"></div>
-                  <div className="absolute -inset-1 bg-gradient-to-r from-amber-400/25 to-yellow-400/25 rounded-xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                  <div className="relative rounded-lg overflow-hidden">
-                    <img 
-                      src={h5} 
-                      alt="Hackathon 5" 
-                      className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                </div>
+              {/* Photo 5 */}
+              <div 
+                className="border border-gray-200 rounded-lg overflow-hidden hover:border-red-500 transition-all duration-300 cursor-pointer hover:shadow-md"
+                onClick={() => setSelectedImage(h5)}
+              >
+                <img 
+                  src={h5} 
+                  alt="Hackathon 5" 
+                  className="w-full h-32 object-cover hover:scale-105 transition-transform duration-300"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Glassmorphism Lightbox Overlay */}
+      {/* Minimalistic Lightbox Overlay */}
       {selectedImage && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-fadeIn"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
           onClick={() => setSelectedImage(null)}
         >
-          {/* Backdrop with blur */}
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-md"></div>
-          
-          {/* Glass modal */}
+          {/* Modal */}
           <div 
-            className="relative max-w-5xl max-h-[90vh] w-full backdrop-blur-3xl bg-gradient-to-br from-white/20 via-white/10 to-white/15 rounded-2xl p-2 md:p-3 border border-white/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] animate-scaleIn"
+            className="relative max-w-5xl max-h-[90vh] w-full bg-white rounded-lg p-2 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Inner glow effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5 rounded-2xl pointer-events-none"></div>
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
-            
             {/* Close button */}
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 z-10 w-10 h-10 backdrop-blur-xl bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center border border-white/40 transition-all duration-300 group"
+              className="absolute -top-12 right-0 w-10 h-10 bg-white hover:bg-gray-100 rounded-full flex items-center justify-center transition-colors duration-200"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white group-hover:rotate-90 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
             
             {/* Image */}
-            <div className="relative rounded-xl overflow-hidden">
+            <div className="rounded-lg overflow-hidden">
               <img 
                 src={selectedImage} 
                 alt="Hackathon" 
-                className="w-full h-full object-contain max-h-[80vh]"
+                className="w-full h-full object-contain max-h-[85vh]"
               />
             </div>
           </div>

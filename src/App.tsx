@@ -31,6 +31,10 @@ function App() {
         subtitle={personalInfo.subtitle}
         profileImage={personalInfo.profileImage}
         backgroundImage={personalInfo.backgroundImage}
+        email="rthippar@umd.edu"
+        github="https://github.com/ritesh3280"
+        linkedin="https://www.linkedin.com/in/rthipparthi/"
+        devpost="https://devpost.com/ritesh3280"
       />
       <About 
         title="About Me"
