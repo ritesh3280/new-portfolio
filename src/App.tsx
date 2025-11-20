@@ -13,7 +13,6 @@ import { Analytics } from '@vercel/analytics/react'
 // Import actual profile and background images
 import profileImage from './assets/images/profile.JPG'
 import backgroundImage from './assets/images/bg.JPG'
-import bgHero from './assets/bgHero.png'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +20,7 @@ function App() {
   // Preload the hero background image
   useEffect(() => {
     const img = new Image();
-    img.src = bgHero;
+    img.src = '/bgHero.png';
 
     // When image loads, wait for minimum duration then hide loader
     img.onload = () => {

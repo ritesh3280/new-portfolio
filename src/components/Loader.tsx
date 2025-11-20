@@ -33,12 +33,9 @@ const Loader = ({ onLoadComplete }: LoaderProps) => {
                 {/* Animated logo/spinner */}
                 <div className="relative">
                     {/* Outer rotating ring */}
-                    <div className="w-24 h-24 rounded-full border-4 border-gray-200 border-t-red-500 animate-spin"></div>
+                    <div className="w-24 h-24 rounded-full border-2 border-gray-200 border-t-red-500 animate-spin"></div>
 
-                    {/* Inner pulsing circle */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-16 h-16 rounded-full bg-red-500/10 animate-pulse"></div>
-                    </div>
+
                 </div>
 
 
