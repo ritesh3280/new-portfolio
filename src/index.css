@@ -67,6 +67,15 @@ body {
   }
 }
 
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
@@ -90,4 +99,8 @@ body {
 
 .animate-slide-down {
   animation: slide-down 0.3s ease-out;
+}
+
+.animate-fade-out {
+  animation: fade-out 0.5s ease-out forwards;
 }
