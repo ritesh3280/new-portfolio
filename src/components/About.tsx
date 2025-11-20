@@ -40,18 +40,56 @@ const About = ({
             <div className="w-full h-px bg-gray-200 my-6"></div>
             
             {/* Skills section */}
-            <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-4 uppercase tracking-wide">
-                Skills
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-3">
-                {['Python', 'Java', 'Next.js', 'React', 'FastAPI', 'Flask', 'C', 'OCaml', 'PyTorch', 'LangChain', 'SQL', 'REST APIs'].map((skill, index) => (
-                  <div key={index} className="group">
-                    <span className="text-sm text-gray-600 hover:text-red-500 transition-colors duration-200 cursor-default">
+            <div className="space-y-4">
+              {/* Languages */}
+              <div>
+                <h3 className="text-xs font-semibold text-gray-900 mb-2 uppercase tracking-wider">
+                  Languages
+                </h3>
+                <div className="flex flex-wrap gap-1.5">
+                  {['Python', 'Java', 'JavaScript/TypeScript', 'C', 'OCaml', 'SQL'].map((skill, index) => (
+                    <span 
+                      key={index} 
+                      className="px-2.5 py-0.5 text-xs text-gray-700 bg-gray-100 border border-gray-200 rounded hover:border-red-500 hover:text-red-500 transition-colors duration-200 cursor-default"
+                    >
                       {skill}
                     </span>
-                  </div>
-                ))}
+                  ))}
+                </div>
+              </div>
+
+              {/* Frameworks & Libraries */}
+              <div>
+                <h3 className="text-xs font-semibold text-gray-900 mb-2 uppercase tracking-wider">
+                  Frameworks & Libraries
+                </h3>
+                <div className="flex flex-wrap gap-1.5">
+                  {['React', 'Next.js', 'Node.js', 'Express', 'Flask', 'FastAPI', 'PyTorch', 'TensorFlow', 'Pandas'].map((skill, index) => (
+                    <span 
+                      key={index} 
+                      className="px-2.5 py-0.5 text-xs text-gray-700 bg-gray-100 border border-gray-200 rounded hover:border-red-500 hover:text-red-500 transition-colors duration-200 cursor-default"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Tools & Platforms */}
+              <div>
+                <h3 className="text-xs font-semibold text-gray-900 mb-2 uppercase tracking-wider">
+                  Tools & Platforms
+                </h3>
+                <div className="flex flex-wrap gap-1.5">
+                  {['MongoDB', 'PostgreSQL', 'Redis', 'Docker', 'Linux', 'Git', 'AWS', 'WebSockets', 'REST APIs'].map((skill, index) => (
+                    <span 
+                      key={index} 
+                      className="px-2.5 py-0.5 text-xs text-gray-700 bg-gray-100 border border-gray-200 rounded hover:border-red-500 hover:text-red-500 transition-colors duration-200 cursor-default"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
