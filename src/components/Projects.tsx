@@ -89,10 +89,10 @@ const Projects = ({
   ]
 }: ProjectsProps) => {
   return (
-    <section id="projects" className="py-20 bg-gray-50">
+    <section id="projects" className="py-20 bg-gray-50 dark:bg-black transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-light text-gray-900 tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-light text-gray-900 dark:text-white tracking-tight">
             Projects
           </h2>
           <div className="w-16 h-0.5 bg-red-500 mt-4 mx-auto"></div>
@@ -102,10 +102,10 @@ const Projects = ({
           {projects.map((project, index) => (
             <div 
               key={index} 
-              className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-red-500 transition-all duration-300 hover:shadow-md hover:-translate-y-1 flex flex-col h-full"
+              className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:border-red-500 transition-all duration-300 hover:shadow-md hover:-translate-y-1 flex flex-col h-full"
             >
               {/* Project Image */}
-              <div className="h-40 overflow-hidden bg-gray-100">
+              <div className="h-40 overflow-hidden bg-gray-100 dark:bg-gray-800">
                 <img 
                   src={project.image} 
                   alt={project.title} 
@@ -115,19 +115,19 @@ const Projects = ({
               
               {/* Content */}
               <div className="p-5 flex-grow flex flex-col">
-                <h3 className="text-base md:text-lg font-medium text-gray-900 mb-2">
+                <h3 className="text-base md:text-lg font-medium text-gray-900 dark:text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-700 text-sm mb-4 flex-grow leading-relaxed">
+                <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 flex-grow leading-relaxed">
                   {project.description}
                 </p>
                 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-4 pt-3 border-t border-gray-200">
+                <div className="flex flex-wrap gap-1.5 mb-4 pt-3 border-t border-gray-200 dark:border-gray-700">
                   {project.tags.map((tag, tagIndex) => (
                     <span 
                       key={tagIndex}
-                      className="px-2.5 py-1 bg-gray-50 text-gray-700 text-xs font-medium rounded-lg border border-gray-200 hover:border-red-500 hover:bg-red-50 hover:text-red-700 transition-all duration-200"
+                      className="px-2.5 py-1 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-lg border border-gray-200 dark:border-gray-700 hover:border-red-500 hover:bg-red-50 dark:hover:bg-gray-700 hover:text-red-700 dark:hover:text-red-500 transition-all duration-200"
                     >
                       {tag}
                     </span>
