@@ -13,9 +13,16 @@ interface ExperienceProps {
 const Experience = ({ 
   experiences = [
     {
+      title: "Undergraduate Researcher",
+      company: "Staraptor Lab, University of Maryland",
+      period: "Dec 2025 - Present",
+      description: "• Building machine learning pipelines to predict 12-month kidney transplant outcomes (eGFR, DGF) across multiple cohorts of real patient data using renal pathomics features from digital pathology.",
+      skills: ["Python", "Machine Learning", "Random Forest", "XGBoost", "Data Analysis"]
+    },
+    {
       title: "Software Development Engineer",
       company: "Terrapin Works, University of Maryland",
-      period: "May 2023 - Present",
+      period: "Mar 2025 - Present",
       description: "• Built Pinpoint, an API-first platform for equipment access, training, and lab administration, enabling real time tracking for 25+ campus makerspaces and 3,000+ users across UMD\n• Implemented responsive web and backend systems powering equipment tracking, Canvas Badge integration, and real-time analytics for makerspaces across UMD\n• Integrated RESTful APIs with UMD CAS authentication for makerspace hardware, streamlining user certification and access workflows in an agile team",
       skills: ["Python", "React", "Node.js", "SQL", "REST APIs"]
     },
