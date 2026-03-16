@@ -9,6 +9,7 @@ import hireFlowImg from "../assets/images/hireflow.png";
 
 interface ProjectItem {
   title: string;
+  award: string;
   description: string;
   image: any;
   tags: string[];
@@ -20,18 +21,38 @@ interface ProjectsProps {
   projects?: ProjectItem[];
 }
 
-const Projects = ({ 
+const Projects = ({
   projects = [
+        {
+      title: "Tax Daddy",
+      award: "3rd Place — Hacklytics, Georgia Tech",
+      description: "Personal tax AI that automates form filling, analytics, and fraud detection from uploaded documents. Streamlines tax filing with real-time insights and anomaly alerts.",
+      image: taxDaddyImg,
+      tags: ["OCR", "MongoDB", "Voice AI", "Data Analytics"],
+      githubUrl: "https://github.com/NSP909/taxerino",
+      demoUrl: "https://devpost.com/software/taxdaddy"
+    },
+        {
+      title: "Focus Flow",
+      award: "1st Place — HackUMBC",
+      description: "EEG-driven focus tracker that classifies brain states as focused or distracted in real time using a custom LSTM with hemisphere-aware attention. Provides live dashboards, alerts, and cognitive analytics.",
+      image: focusFlowImg,
+      tags: ["LSTM", "EEG", "Neural Networks", "Real-time Analytics", "Python"],
+      githubUrl: "https://github.com/ritesh3280/hackUMBC25",
+      demoUrl: "https://devpost.com/software/focus-flow-y63tzm"
+    },
     {
-      title: "Clueless (HackMIT – 2nd Place, Wispr Flow Track)",
-      description: "AI-powered navigation assistant that lets developers explore any website using natural language and voice. Combines web scraping, knowledge graphs, and speech recognition for step-by-step, visual UI guidance.",
+      title: "Clueless",
+      award: "2nd Place — HackMIT",
+      description: "AI navigation assistant that lets developers explore any website using natural language and voice. Combines web scraping, knowledge graphs, and speech recognition for step-by-step visual UI guidance.",
       image: cluelessImg,
       tags: ["React", "TypeScript", "Python", "Neo4j", "Pinecone"],
       githubUrl: "https://github.com/prat-core/clueless",
       demoUrl: "https://plume.hackmit.org/project/ufyrx-xhfvw-skjfl-pcgwq"
     },
     {
-      title: "See With Me (Bitcamp UMD)",
+      title: "See With Me",
+      award: "Bitcamp UMD",
       description: "Smart glasses tool for digital forensics that delivers real-time object detection, scene analysis, and investigative search. Helps investigators quickly extract evidence from live or recorded video.",
       image: seeWithMeImg,
       tags: ["FastAPI", "React", "YOLOv11", "Computer Vision"],
@@ -39,15 +60,8 @@ const Projects = ({
       demoUrl: "https://devpost.com/software/see-with-me"
     },
     {
-      title: "Focus Flow (HackUMBC – 1st Place Overall)",
-      description: "EEG-driven focus tracker that classifies brain states as focused or distracted in real time using a custom LSTM with hemisphere-aware attention. Provides live dashboards, alerts, and cognitive analytics to help users monitor and improve attention.",
-      image: focusFlowImg,
-      tags: ["LSTM", "EEG", "Neural Networks", "Real-time Analytics", "Python"],
-      githubUrl: "https://github.com/ritesh3280/hackUMBC25",
-      demoUrl: "https://devpost.com/software/focus-flow-y63tzm"
-    },
-    {
-      title: "SolSpeak (HackNYU – 2nd Place, Best Solana Hack)",
+      title: "SolSpeak",
+      award: "2nd Place, Best Solana Hack — HackNYU",
       description: "Voice AI platform that turns a phone call into a full-featured DeFi interface. Lets users trade, transfer, and manage crypto assets hands-free with Solana mainnet integrations.",
       image: solSpeakImg,
       tags: ["Solana", "Voice AI", "DeFi", "Blockchain"],
@@ -55,15 +69,8 @@ const Projects = ({
       demoUrl: "https://devpost.com/software/n-kp7oqy"
     },
     {
-      title: "Tax Daddy (Hacklytics Georgia Tech – 3rd Place Overall)",
-      description: "Personal tax AI that automates form filling, analytics, and fraud detection from uploaded documents. Streamlines tax filing with real-time insights and anomaly alerts.",
-      image: taxDaddyImg,
-      tags: ["OCR", "MongoDB", "Voice AI", "Data Analytics"],
-      githubUrl: "https://github.com/NSP909/taxerino",
-      demoUrl: "https://devpost.com/software/taxdaddy"
-    },
-    {
-      title: "Orbital Finance (HackPrinceton – 2nd Place Overall)",
+      title: "Orbital Finance",
+      award: "2nd Place — HackPrinceton",
       description: "Conversational AI platform that integrates real-time RAG and voice AI for business intelligence. Enables natural language to SQL queries, instant insights, and automated customer interactions.",
       image: orbitalFinanceImg,
       tags: ["React", "PyTorch", "Flask", "Tailwind CSS", "Pinecone"],
@@ -71,7 +78,8 @@ const Projects = ({
       demoUrl: "https://dorahacks.io/buidl/19414"
     },
     {
-      title: "Vector Mentor (HackUMBC – 1st Place Overall)",
+      title: "Vector Mentor",
+      award: "1st Place — HackUMBC",
       description: "AI-powered study assistant that integrates Canvas data, generates practice questions, and provides personalized recommendations. Helps students track progress and optimize learning.",
       image: vectorMentorImg,
       tags: ["React", "JavaScript", "Tailwind CSS", "Flask", "LangChain", "PyTorch"],
@@ -79,7 +87,8 @@ const Projects = ({
       demoUrl: "https://devpost.com/software/to-be-decided-og94ij"
     },
     {
-      title: "HireFlow (HoyaHacks – HashiCorp Best Use of Terraform)",
+      title: "HireFlow",
+      award: "Best Use of Terraform — HoyaHacks",
       description: "AI recruiting assistant that automates resume reviews, screening calls, and candidate scoring. Reduces bias and accelerates hiring by matching talent to jobs with precision.",
       image: hireFlowImg,
       tags: ["NLP", "AI", "Terraform", "Recruitment"],
@@ -97,35 +106,38 @@ const Projects = ({
           </h2>
           <div className="w-16 h-0.5 bg-red-500 mt-4 mx-auto"></div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {projects.map((project, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:border-red-500 transition-all duration-300 hover:shadow-md hover:-translate-y-1 flex flex-col h-full"
             >
               {/* Project Image */}
               <div className="h-40 overflow-hidden bg-gray-100 dark:bg-gray-800">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
+                <img
+                  src={project.image}
+                  alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>
-              
+
               {/* Content */}
               <div className="p-5 flex-grow flex flex-col">
+                <span className="text-[11px] text-red-500 font-semibold uppercase tracking-wider mb-1">
+                  {project.award}
+                </span>
                 <h3 className="text-base md:text-lg font-medium text-gray-900 dark:text-white mb-2">
                   {project.title}
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 flex-grow leading-relaxed">
                   {project.description}
                 </p>
-                
+
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1.5 mb-4 pt-3 border-t border-gray-200 dark:border-gray-700">
                   {project.tags.map((tag, tagIndex) => (
-                    <span 
+                    <span
                       key={tagIndex}
                       className="px-2.5 py-1 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-lg border border-gray-200 dark:border-gray-700 hover:border-red-500 hover:bg-red-50 dark:hover:bg-gray-700 hover:text-red-700 dark:hover:text-red-500 transition-all duration-200"
                     >
@@ -133,13 +145,13 @@ const Projects = ({
                     </span>
                   ))}
                 </div>
-                
+
                 {/* Action Buttons */}
                 <div className="flex gap-2">
-                  <a 
-                    href={project.githubUrl} 
+                  <a
+                    href={project.githubUrl}
                     className="flex-1 px-3 py-2 bg-gray-900 text-white text-xs font-medium rounded-lg hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-1.5"
-                    target="_blank" 
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -147,10 +159,10 @@ const Projects = ({
                     </svg>
                     Code
                   </a>
-                  <a 
-                    href={project.demoUrl} 
+                  <a
+                    href={project.demoUrl}
                     className="flex-1 px-3 py-2 bg-red-500 text-white text-xs font-medium rounded-lg hover:bg-red-600 transition-all duration-300 flex items-center justify-center gap-1.5"
-                    target="_blank" 
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
