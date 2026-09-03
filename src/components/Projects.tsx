@@ -11,7 +11,7 @@ interface ProjectItem {
   title: string;
   award: string;
   description: string;
-  image: any;
+  image: string;
   tags: string[];
   githubUrl: string;
   demoUrl: string;

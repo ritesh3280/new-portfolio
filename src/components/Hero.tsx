@@ -40,10 +40,10 @@ const Hero = ({ name, email, github, linkedin, devpost }: HeroProps) => {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-3 font-light">
-            Software Development Engineer
+            Software Engineer
           </p>
           <p className="text-lg text-gray-500 dark:text-gray-400 mb-8 leading-relaxed max-w-xl">
-            CS + Business @ UMD. I ship fast and love to make things people actually use. Won at MIT, Princeton, Georgia Tech, and more.
+            CS + Business @ UMD. Most recently, I built scheduling infrastructure at Dandy for a production engine planning 6,000+ orders a day.
           </p>
 
           {/* Buttons */}
@@ -73,7 +73,7 @@ const Hero = ({ name, email, github, linkedin, devpost }: HeroProps) => {
             <a href={devpost} target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-red-500 transition-colors duration-300">
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.002 1.61 0 12.004 6.002 22.39h11.996L24 12.004 17.998 1.61zm1.593 4.084h3.947c3.605 0 6.276 1.695 6.276 6.31 0 4.436-3.21 6.302-6.456 6.302H7.595zm2.517 2.449v7.714h1.241c2.646 0 3.862-1.55 3.862-3.861.009-2.569-1.096-3.853-3.767-3.853z" /></svg>
             </a>
-            <a href="https://drive.google.com/file/d/1pnNzX4iWyEVHwmZ_XvtzX_NIu5Y4MVSk/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-red-500 transition-colors duration-300">
+            <a href="https://drive.google.com/file/d/1xSbgKh54kzIH0lwj6JdNA-qUl0gL0Qrm/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-red-500 transition-colors duration-300">
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
             </a>
           </div>

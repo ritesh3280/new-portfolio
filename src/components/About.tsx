@@ -23,9 +23,21 @@ interface AboutProps {
 
 const About = ({
   title = "My Story",
-  description = "I'm a junior at the University of Maryland studying Computer Science + Business. I build things that work, from production platforms with thousands of users to AI systems that win hackathons. I love fast-paced environments where I can turn ideas into products.",
+  description = "I'm a senior at the University of Maryland studying Computer Science + Business. I build things that work, from production systems processing thousands of orders a day to AI projects that win hackathons. I love fast-paced environments where I can turn ideas into products.",
   description2 = "also researching with kidneys 🫘",
   timeline = [
+    {
+      title: "Software Engineer Intern",
+      company: "Dandy",
+      period: "May 2026 - Aug 2026",
+      summary: "Built and launched holiday-aware scheduling infrastructure for a production engine planning 6,000+ orders each day.",
+      details: [
+        "Owned an international holiday-calendar system end to end across operations UI, GraphQL APIs, PostgreSQL services, planning logic, shipping estimates, and Temporal workflows",
+        "Replaced code-deploy holiday updates with self-serve configuration and idempotent calendar seeding, making new-country onboarding a configuration change",
+        "Fixed delivery-date logic across 15+ scheduling paths, addressing a root cause of 300+ monthly ETA-accuracy tickets while supporting expansion into 10+ countries"
+      ],
+      skills: ["TypeScript", "PostgreSQL", "Temporal", "GraphQL", "LaunchDarkly"]
+    },
     {
       title: "Software Development Engineer",
       company: "Terrapin Works, University of Maryland",
@@ -100,7 +112,7 @@ const About = ({
                     Languages
                   </h3>
                   <div className="flex flex-wrap gap-1.5">
-                    {['Python', 'Java', 'JavaScript/TypeScript', 'C', 'SQL'].map((skill, index) => (
+                    {['TypeScript', 'Python', 'Java', 'C', 'SQL', 'OCaml'].map((skill, index) => (
                       <span
                         key={index}
                         className="px-2.5 py-0.5 text-xs text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded hover:border-red-500 hover:text-red-500 transition-colors duration-200 cursor-default"
@@ -116,7 +128,7 @@ const About = ({
                     Frameworks & Libraries
                   </h3>
                   <div className="flex flex-wrap gap-1.5">
-                    {['React', 'Next.js', 'Node.js', 'Express', 'Flask', 'FastAPI', 'PyTorch', 'TensorFlow', 'Pandas'].map((skill, index) => (
+                    {['React', 'Next.js', 'NestJS', 'Node.js', 'GraphQL', 'Flask', 'FastAPI', 'PyTorch', 'LangChain'].map((skill, index) => (
                       <span
                         key={index}
                         className="px-2.5 py-0.5 text-xs text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded hover:border-red-500 hover:text-red-500 transition-colors duration-200 cursor-default"
@@ -132,7 +144,7 @@ const About = ({
                     Tools & Platforms
                   </h3>
                   <div className="flex flex-wrap gap-1.5">
-                    {['MongoDB', 'PostgreSQL', 'Redis', 'Docker', 'Linux', 'Git', 'AWS', 'WebSockets', 'REST APIs'].map((skill, index) => (
+                    {['PostgreSQL', 'Redis', 'Temporal', 'Docker', 'Git', 'AWS', 'GCP', 'BigQuery', 'LaunchDarkly', 'CI/CD'].map((skill, index) => (
                       <span
                         key={index}
                         className="px-2.5 py-0.5 text-xs text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded hover:border-red-500 hover:text-red-500 transition-colors duration-200 cursor-default"
