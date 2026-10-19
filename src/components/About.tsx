@@ -27,18 +27,6 @@ const About = ({
   description2 = "predicting post transplant kidney function and outcomes 🫘\nalso working with dental scans to predict carotid calcification 🦷",
   timeline = [
     {
-      title: "Software Engineer Intern",
-      company: "Dandy",
-      period: "May 2026 - Aug 2026",
-      summary: "Owned international holiday planning from tech spec to production launch, making delivery dates correct for 6,000+ orders a day across 10 countries.",
-      details: [
-        "Owned Dandy's international holiday planning project from tech spec to production launch, making delivery dates correct for 6,000+ orders/day across 10 countries; rolled out behind feature flags with zero errors",
-        "Replaced a single US calendar with lab- and carrier-specific holidays across 20 planning, shipping, and solver paths, so customers get accurate ETAs and international labs are no longer scored late on local holidays",
-        "Designed an event-driven pipeline (Postgres outbox, Pub/Sub, Temporal) that recomputes lab capacity and refreshes the solver's Redis cache on every calendar edit, so ops onboard new countries with zero code"
-      ],
-      skills: ["TypeScript", "PostgreSQL", "Pub/Sub", "Temporal", "Redis", "LaunchDarkly"]
-    },
-    {
       title: "Software Development Engineer",
       company: "Terrapin Works, University of Maryland",
       period: "Mar 2025 - Present",
@@ -50,6 +38,18 @@ const About = ({
         "Leading Pinpoint's workshop check-in build, designing its architecture and data model, to replace single-kiosk queues and manual roster entry across 60–80 workshops a semester with QR check-in and live rosters"
       ],
       skills: ["Python", "React", "Node.js", "SQL", "REST APIs"]
+    },
+    {
+      title: "Software Engineer Intern",
+      company: "Dandy",
+      period: "May 2026 - Aug 2026",
+      summary: "Owned international holiday planning from tech spec to production launch, making delivery dates correct for 6,000+ orders a day across 10 countries.",
+      details: [
+        "Owned Dandy's international holiday planning project from tech spec to production launch, making delivery dates correct for 6,000+ orders/day across 10 countries; rolled out behind feature flags with zero errors",
+        "Replaced a single US calendar with lab- and carrier-specific holidays across 20 planning, shipping, and solver paths, so customers get accurate ETAs and international labs are no longer scored late on local holidays",
+        "Designed an event-driven pipeline (Postgres outbox, Pub/Sub, Temporal) that recomputes lab capacity and refreshes the solver's Redis cache on every calendar edit, so ops onboard new countries with zero code"
+      ],
+      skills: ["TypeScript", "PostgreSQL", "Pub/Sub", "Temporal", "Redis", "LaunchDarkly"]
     },
     {
       title: "Undergraduate Researcher",
