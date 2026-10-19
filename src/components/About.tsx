@@ -23,7 +23,7 @@ interface AboutProps {
 
 const About = ({
   title = "My Story",
-  description = "I'm a senior at the University of Maryland studying Computer Science + Business. I build things people enjoy using and that are actually needed, from production systems processing thousands of orders a day to AI projects that win hackathons. I love fast-paced environments where I can turn ideas into products.",
+  description = "I'm a senior at the University of Maryland studying Computer Science + Business. I build things people enjoy using and that are actually needed, from production systems processing thousands of orders a day to projects that win hackathons. I love fast-paced environments where I can turn ideas into products.",
   description2 = "predicting post transplant kidney function and outcomes 🫘\nalso working with dental scans to predict carotid calcification 🦷",
   timeline = [
     {
