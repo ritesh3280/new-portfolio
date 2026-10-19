@@ -21,12 +21,8 @@ const Contact = ({
           <div className="w-16 h-0.5 bg-red-500 mt-4 mx-auto"></div>
         </div>
 
-        <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-4 leading-relaxed max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto">
           I'm looking for <span className="font-medium text-gray-900 dark:text-white">new-grad and full-time software engineering roles</span>. If you're building something interesting, I'd love to talk.
-        </p>
-
-        <p className="text-gray-500 dark:text-gray-400 text-sm mb-10">
-          Best way to reach me is email - I typically respond within 24 hours.
         </p>
 
         {/* Primary CTA */}
