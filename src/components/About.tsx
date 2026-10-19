@@ -23,42 +23,45 @@ interface AboutProps {
 
 const About = ({
   title = "My Story",
-  description = "I'm a senior at the University of Maryland studying Computer Science + Business. I build things that work, from production systems processing thousands of orders a day to AI projects that win hackathons. I love fast-paced environments where I can turn ideas into products.",
-  description2 = "also researching with kidneys 🫘",
+  description = "I'm a senior at the University of Maryland studying Computer Science + Business. I build things people enjoy using and that are actually needed, from production systems processing thousands of orders a day to AI projects that win hackathons. I love fast-paced environments where I can turn ideas into products.",
+  description2 = "predicting post transplant kidney function and outcomes 🫘\nalso working with dental scans to predict carotid calcification 🦷",
   timeline = [
     {
       title: "Software Engineer Intern",
       company: "Dandy",
       period: "May 2026 - Aug 2026",
-      summary: "Built and launched holiday-aware scheduling infrastructure for a production engine planning 6,000+ orders each day.",
+      summary: "Owned international holiday planning from tech spec to production launch, making delivery dates correct for 6,000+ orders a day across 10 countries.",
       details: [
-        "Owned an international holiday-calendar system end to end across operations UI, GraphQL APIs, PostgreSQL services, planning logic, shipping estimates, and Temporal workflows",
-        "Replaced code-deploy holiday updates with self-serve configuration and idempotent calendar seeding, making new-country onboarding a configuration change",
-        "Fixed delivery-date logic across 15+ scheduling paths, addressing a root cause of 300+ monthly ETA-accuracy tickets while supporting expansion into 10+ countries"
+        "Owned Dandy's international holiday planning project from tech spec to production launch, making delivery dates correct for 6,000+ orders/day across 10 countries; rolled out behind feature flags with zero errors",
+        "Replaced a single US calendar with lab- and carrier-specific holidays across 20 planning, shipping, and solver paths, so customers get accurate ETAs and international labs are no longer scored late on local holidays",
+        "Designed an event-driven pipeline (Postgres outbox, Pub/Sub, Temporal) that recomputes lab capacity and refreshes the solver's Redis cache on every calendar edit, so ops onboard new countries with zero code"
       ],
-      skills: ["TypeScript", "PostgreSQL", "Temporal", "GraphQL", "LaunchDarkly"]
+      skills: ["TypeScript", "PostgreSQL", "Pub/Sub", "Temporal", "Redis", "LaunchDarkly"]
     },
     {
       title: "Software Development Engineer",
       company: "Terrapin Works, University of Maryland",
       period: "Mar 2025 - Present",
-      summary: "Building Pinpoint, an API-first platform for equipment access and lab administration across 25+ campus makerspaces.",
+      summary: "Building Pinpoint, the check-in and equipment-access platform for 3,000+ users across 25+ campus makerspaces.",
       details: [
-        "Implemented responsive web and backend systems powering equipment tracking, Canvas Badge integration, and real-time analytics for 3,000+ users across 100+ machines",
-        "Integrated RESTful APIs with UMD CAS authentication, streamlining user certification and access workflows in an agile team"
+        "Rebuilt Pinpoint's backend as a V2 API with a 6-person team (~88 endpoints, ~875 tests, security audit), retiring the legacy V1 in production for 3,000+ users across 25+ makerspaces",
+        "Hardened production check-in: cut kiosk wait during campus ID-service outages from ~30s to ~7s with a local card cache, and fixed badge-linking bugs that left 3,500+ users unprompted and blocked all non-admin profile saves",
+        "Led a 5-person redesign of Pinpoint's check-in reasons end to end, replacing per-lab duplicates with one shared pool each makerspace enables as needed: schema, data migration, APIs, admin UI, and integration of the team's work",
+        "Leading Pinpoint's workshop check-in build, designing its architecture and data model, to replace single-kiosk queues and manual roster entry across 60–80 workshops a semester with QR check-in and live rosters"
       ],
       skills: ["Python", "React", "Node.js", "SQL", "REST APIs"]
     },
     {
       title: "Undergraduate Researcher",
-      company: "Staraptor Lab, University of Maryland",
+      company: "Machamp Lab, University of Maryland",
       period: "Dec 2025 - Present",
-      summary: "Building ML pipelines to predict 12-month kidney transplant outcomes using digital pathology.",
+      summary: "Building ML pipelines that predict kidney-transplant outcomes from biopsy pathomics for 500+ patients.",
       details: [
-        "Developing models for eGFR and DGF prediction across multiple cohorts of real patient data using renal pathomics features",
-        "Working with Random Forest and XGBoost classifiers on high-dimensional clinical datasets"
+        "Built ML pipelines predicting kidney-transplant outcomes (1-year eGFR, delayed graft function) from biopsy pathomics for 500+ patients across UC Davis and Mayo Clinic, with bootstrap validation and 1–100 feature sweeps",
+        "Identified a compact 12–18-feature signature (artery features ~80% of importance) within 10% of the best model, and showed site effects dominate cross-hospital transfer, driving the lab's harmonization work",
+        "Built the de-identification, labeling, and radiomics pipeline for an NIH R01 resubmission on detecting carotid calcification from dental X-rays, curating 112 patients into 184 labeled neck sides"
       ],
-      skills: ["Python", "Machine Learning", "XGBoost", "Data Analysis"]
+      skills: ["Python", "Machine Learning", "Radiomics", "Data Analysis"]
     },
     {
       title: "Undergraduate Researcher",
@@ -97,7 +100,7 @@ const About = ({
                 {description}
               </p>
               {description2 && (
-                <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+                <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-8 whitespace-pre-line">
                   {description2}
                 </p>
               )}
@@ -125,10 +128,10 @@ const About = ({
 
                 <div>
                   <h3 className="text-xs font-semibold text-gray-900 dark:text-white mb-2 uppercase tracking-wider">
-                    Frameworks & Libraries
+                    Frameworks & ML
                   </h3>
                   <div className="flex flex-wrap gap-1.5">
-                    {['React', 'Next.js', 'NestJS', 'Node.js', 'GraphQL', 'Flask', 'FastAPI', 'PyTorch', 'LangChain'].map((skill, index) => (
+                    {['React', 'Next.js', 'NestJS', 'GraphQL', 'Node.js', 'FastAPI', 'Flask', 'PyTorch', 'LangChain'].map((skill, index) => (
                       <span
                         key={index}
                         className="px-2.5 py-0.5 text-xs text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded hover:border-red-500 hover:text-red-500 transition-colors duration-200 cursor-default"
@@ -141,10 +144,10 @@ const About = ({
 
                 <div>
                   <h3 className="text-xs font-semibold text-gray-900 dark:text-white mb-2 uppercase tracking-wider">
-                    Tools & Platforms
+                    Systems & Tools
                   </h3>
                   <div className="flex flex-wrap gap-1.5">
-                    {['PostgreSQL', 'Redis', 'Temporal', 'Docker', 'Git', 'AWS', 'GCP', 'BigQuery', 'LaunchDarkly', 'CI/CD'].map((skill, index) => (
+                    {['AWS', 'GCP', 'Docker', 'Redis', 'Temporal', 'Pub/Sub', 'PostgreSQL', 'BigQuery', 'LaunchDarkly', 'CI/CD'].map((skill, index) => (
                       <span
                         key={index}
                         className="px-2.5 py-0.5 text-xs text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded hover:border-red-500 hover:text-red-500 transition-colors duration-200 cursor-default"

@@ -6,6 +6,7 @@ import taxDaddyImg from "../assets/images/TaxDaddy.png";
 import orbitalFinanceImg from "../assets/images/orbitalfionance.png";
 import vectorMentorImg from "../assets/images/vectormentor.png";
 import hireFlowImg from "../assets/images/hireflow.png";
+import runeBragiImg from "../assets/images/runebragi.png";
 
 interface ProjectItem {
   title: string;
@@ -23,7 +24,16 @@ interface ProjectsProps {
 
 const Projects = ({
   projects = [
-        {
+    {
+      title: "Rune & Bragi",
+      award: "1st Overall + Community Impact — HackUMBC 2026",
+      description: "Hand-worn assistive device for deafblind users that presses the world into your fingertip as braille on a real six-solenoid cell, and turns your fingerspelling into speech. Built for about $50 in parts, versus $799+ for commercial braille displays.",
+      image: runeBragiImg,
+      tags: ["Raspberry Pi", "MediaPipe", "TensorFlow", "YOLO26", "PP-OCRv4", "Python"],
+      githubUrl: "https://github.com/NSP909/IMG2BRL",
+      demoUrl: "https://devpost.com/software/rune-bragi"
+    },
+    {
       title: "Tax Daddy",
       award: "3rd Place — Hacklytics, Georgia Tech",
       description: "Personal tax AI that automates form filling, analytics, and fraud detection from uploaded documents. Streamlines tax filing with real-time insights and anomaly alerts.",
@@ -107,7 +117,7 @@ const Projects = ({
           <div className="w-16 h-0.5 bg-red-500 mt-4 mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div
               key={index}

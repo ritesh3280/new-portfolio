@@ -31,7 +31,7 @@ const Hero = ({ name, email, github, linkedin, devpost }: HeroProps) => {
           <div className="flex items-center gap-3 mb-6">
             <div className="h-px w-8 bg-red-500"></div>
             <span className="text-red-500 font-medium text-sm uppercase tracking-wider">
-              7x Hackathon Winner
+              8x Hackathon Winner
             </span>
           </div>
 

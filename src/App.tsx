@@ -43,7 +43,7 @@ function App() {
         <Hero
           name="Ritesh Thipparthi"
           tagline="Software Development Engineer"
-          subtitle="CS + Business @ UMD • 7x Hackathon Winner"
+          subtitle="CS + Business @ UMD • 8x Hackathon Winner"
           profileImage={profileImage}
           backgroundImage={backgroundImage}
           email="rthippar@umd.edu"
